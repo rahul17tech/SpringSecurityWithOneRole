@@ -1,67 +1,34 @@
-Spring Security with Single Role (USER)
+# **SpringSecurityWithOneRole**
 
-Introduction
+Spring Security implemented with just one role (**"USER"**).
 
-This project demonstrates Spring Boot security with a single role (USER). It includes JWT authentication and authorization mechanisms.
+## **Features**
+- User authentication using JWT.
+- Secured endpoints with role-based access control.
+- Custom JWT implementation for authentication.
 
-Technologies Used
+## **Technologies Used**
+- **Spring Boot**
+- **Spring Security**
+- **JWT (JSON Web Token)**
+- **Oracle Database**
 
-Spring Boot
+## **Endpoints**
+| HTTP Method | Endpoint   | Description |
+|------------|------------|-------------|
+| POST       | `/register` | Registers a new user. |
+| POST       | `/login` | Authenticates user and returns a JWT token. |
+| GET        | `/product` | Accessible by users with role `USER`. |
+| POST       | `/product` | Adds a new product, accessible by `USER`. |
 
-Spring Security
+## **Installation and Setup**
+1. Clone the repository.
+2. Update application.properties with necessary configurations.
+3. Run the application using `mvn spring-boot:run`.
+4. Use tools like **Postman** to test API endpoints.
 
-JWT (JSON Web Token)
+## **Conclusion**
+This project demonstrates how to implement authentication and authorization in a Spring Boot application with a single role (**USER**) using JWT.
 
-Java 17+
+---
 
-Features
-
-User authentication using JWT
-
-Secured API endpoints
-
-Role-based access control
-
-Endpoints
-
-Method
-
-Endpoint
-
-Description
-
-POST
-
-/register
-
-Register a new user
-
-POST
-
-/login
-
-Authenticate user and generate JWT
-
-GET
-
-/product
-
-Access products (Requires USER role)
-
-POST
-
-/product
-
-Add new product (Requires USER role)
-
-Security Implementation
-
-JWT Generation: The JwtService generates tokens for authentication.
-
-Authentication Filter: JwtAuthenticationFilter validates and processes JWTs.
-
-Security Configuration: Configured in SecurityConfig using SecurityFilterChain.
-
-Conclusion
-
-This project is a simple demonstration of Spring Security with JWT authentication for a single role (USER). It ensures secured access to API endpoints based on user roles.
